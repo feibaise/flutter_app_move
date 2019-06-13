@@ -4,7 +4,8 @@ class MovieDetail extends StatefulWidget {
   final String id;
   final String title;
 
-  MovieDetail({Key key,@required this.id,@required this.title}):super(key:key);
+  MovieDetail({Key key, @required this.id, @required this.title})
+      : super(key: key);
 
   @override
   _MovieDetailState createState() {
@@ -15,6 +16,12 @@ class MovieDetail extends StatefulWidget {
 class _MovieDetailState extends State<MovieDetail> {
   @override
   Widget build(BuildContext context) {
-    return Text('detail --${widget.id}');
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        centerTitle: true,
+      ),
+      body: Text('电影id为：${widget.id}'),
+    );
   }
 }

@@ -16,15 +16,20 @@ class MovieList extends StatefulWidget {
 }
 
 //有状态控件,必须结合一个状态管理类,来进行实现
-class _MovieListState extends State<MovieList> {
+class _MovieListState extends State<MovieList> with AutomaticKeepAliveClientMixin {
   //默认显示第一页数据
   int page = 1;
   int pagesize = 10;
+
 
   //电影列表数据
   var mlist = [];
   // 总数据条数,实习分页效果的
   var total = 0;
+
+  //实现状态记录
+  @override
+  bool get wantKeepAlive => true;
 
   //控件被创建的时候
   @override
